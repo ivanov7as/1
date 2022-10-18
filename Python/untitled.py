@@ -1,52 +1,33 @@
-#задача 1
-day = int(input('введите день недели '))
-if 5<day:
-    print('день выходной')
-elif day>8:
-    print('такого дня нет')
-else:
-    print('день рабочий')
-#задача 2
+number = int(input('введите число '))
+sum = 0 
+while number > 0:
+    sum = sum + number % 10
+    number = number // 10
+print("Сумма цифр:", sum)
 
-lx = int(input('число X '))
-ly = int(input('число Y '))
-lz = int(input('число X '))
-first = not (lx or ly or lz)
-second = not lx and not ly and not lz
-if first == second:
-    print('утверждение истинно')
-else:
-    print('утверждение ложно')
+n = int(input('введите число N '))
+count =1 
+for i in range(1, n+1):
+    count = count*i
+    print(count, end=' ')
 
-#задача 3
-x =int(input('введите x '))
-y =int(input('введите y '))
-if (x>0) & (y>0):
-    print('первая четверть')
-elif (x<0) & (y>0):
-    print('вторая четверть')
-elif (x<0) & (y<0):
-    print('третья четверть')
-else:
-    print('четвертая четверть')
-#задача 4
-quarter = int(input('введите четверть '))
-if quarter == 1:
-    print('x>0 y>0')
-elif quarter == 2:
-    print('x<0 y>0')
-elif quarter == 3:
-    print('x<0 y<0')
-elif quarter == 4:
-    print('x>0 y<0')
-else:
-    print("такой четверти нет")
+num = int(input('введите число N '))
+c=0
+for i in range(1, num+1):
+    c=c+(1+1/i)**i
+print(c)
 
-#задача 5
-ax = int(input('введите координату X точки А '))
-ay = int(input('введите координату Y точки А '))
-bx = int(input('введите координату X точки B '))
-by = int(input('введите координату Y точки B '))
-result = ((bx-ax)*(bx-ax)+(by-ay)*(by-ay))**0.5
-print(result)
-
+from random import randint
+nlist=int(input('введите число '))
+list=[]
+for i in range(nlist):
+    list.append(randint(-nlist, nlist))
+file=1
+with open('file.txt', 'w') as txt:
+    for i in range(nlist):
+        txt.write(str(randint(0, nlist-1))+ '\n')
+with open('file.txt', 'r') as txt:
+    txt=txt.read().splitlines()
+    for number in txt:
+        file*=list[int(number)]
+print(file)
