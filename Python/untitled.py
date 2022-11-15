@@ -24,5 +24,10 @@ while k<len(list):
 print(list)
 
 arr = ['инженер-конструктор Игорь', 'главный бухгалтер МАРИНА', 'токарь высшего разряда нИКОЛАй', 'директор аэлита']
-for position in arr:
-    print('Привет,', position.split()[-1].title(),'!')
+for name in arr:
+    print('Привет,', name.split()[-1].title(),'!')
+
+price = [57.8, 46.51, 97, 22.3, 32, 41.3, 55, 88, 77.22, 31]
+price=["%.2f" % i for i in price]
+for num in price:
+    print(num.split('.')[0].title(), 'рублей', num.split('.')[-1].title(),'копеек')
