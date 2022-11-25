@@ -1,2 +1,2 @@
-import person
-import interface
+import operation as op
+op.button_click()
